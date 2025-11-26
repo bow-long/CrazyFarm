@@ -1,17 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfopxd6xd872s"]
+[gd_scene load_steps=5 format=3 uid="uid://dfopxd6xd872s"]
 
 [ext_resource type="Script" uid="uid://0vh65kcwqwcd" path="res://cow.gd" id="1_cv0wc"]
 [ext_resource type="Texture2D" uid="uid://dq4tfhqoq78j6" path="res://icon.svg" id="1_reef3"]
+[ext_resource type="Script" uid="uid://c2i4jrftfo0u8" path="res://hitboxattachment.gd" id="3_ifesx"]
+[ext_resource type="Script" uid="uid://dyoe67tgwt6mf" path="res://healthattachment.gd" id="3_ra332"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cv0wc"]
-radius = 13.0
-
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Cow" type="CharacterBody2D"]
 script = ExtResource("1_cv0wc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_cv0wc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_reef3")
+
+[node name="RandomMovement" type="Timer" parent="."]
+autostart = true
+
+[node name="Hitboxattachment" type="Area2D" parent="."]
+script = ExtResource("3_ifesx")
+
+[node name="Attackattachment" type="Node2D" parent="."]
+
+[node name="Healthattachment" type="Node2D" parent="."]
+script = ExtResource("3_ra332")
+
+[connection signal="timeout" from="RandomMovement" to="." method="_on_random_movement_timeout"]
