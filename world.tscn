@@ -1,10 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://brueu7qgsnc0s"]
+[gd_scene format=3 uid="uid://brueu7qgsnc0s"]
 
 [ext_resource type="PackedScene" uid="uid://11hkjx2x2y6y" path="res://farm.tscn" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://dfopxd6xd872s" path="res://Cow.tscn" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://c7lrw1s7oxmw7" path="res://grass.tscn" id="3_tlwt5"]
 
-[node name="World" type="Node"]
+[node name="World" type="Node" unique_id=388043205]
 
-[node name="Scene" parent="." instance=ExtResource("1_f3sb7")]
+[node name="Scene" parent="." unique_id=397506671 instance=ExtResource("1_f3sb7")]
 
-[node name="Node2D" parent="." instance=ExtResource("2_fj7yv")]
+[node name="Node2D" parent="." unique_id=788736605 instance=ExtResource("2_fj7yv")]
+position = Vector2(-43, 18)
+
+[node name="Node2D2" parent="." unique_id=297645456 instance=ExtResource("2_fj7yv")]
+position = Vector2(56, 16)
+
+[node name="Node2D3" parent="." unique_id=1873758189 instance=ExtResource("2_fj7yv")]
+position = Vector2(-26, -27)
+
+[node name="Node2D4" parent="." unique_id=1510152040 instance=ExtResource("2_fj7yv")]
+position = Vector2(51, -25)
+
+[node name="Node2D5" parent="." unique_id=2028161164 instance=ExtResource("2_fj7yv")]
+position = Vector2(-64, -15)
+
+[node name="Node2D6" parent="." unique_id=1489127738 instance=ExtResource("3_tlwt5")]
+position = Vector2(147, -23)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8386oo0nhvo7"]
+
+[ext_resource type="Script" uid="uid://dyoe67tgwt6mf" path="res://Attatchments/healthattachment.gd" id="1_fuklh"]
+
+[node name="Healthattachment" type="Node2D"]
+script = ExtResource("1_fuklh")

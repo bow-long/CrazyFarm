@@ -1,26 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfopxd6xd872s"]
+[gd_scene format=3 uid="uid://dfopxd6xd872s"]
 
 [ext_resource type="Script" uid="uid://0vh65kcwqwcd" path="res://cow.gd" id="1_cv0wc"]
 [ext_resource type="Texture2D" uid="uid://dq4tfhqoq78j6" path="res://icon.svg" id="1_reef3"]
-[ext_resource type="Script" uid="uid://c2i4jrftfo0u8" path="res://hitboxattachment.gd" id="3_ifesx"]
-[ext_resource type="Script" uid="uid://dyoe67tgwt6mf" path="res://healthattachment.gd" id="3_ra332"]
+[ext_resource type="PackedScene" uid="uid://npjhl16vtkyu" path="res://Attatchments/hitboxattachment.tscn" id="3_ifesx"]
+[ext_resource type="Script" uid="uid://biayp7vu50uou" path="res://attackattachment.gd" id="4_twmtf"]
+[ext_resource type="PackedScene" uid="uid://c8386oo0nhvo7" path="res://Attatchments/healthattachment.tscn" id="4_ydls3"]
 
-[node name="Cow" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfoab"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifesx"]
+radius = 11.0
+
+[node name="Cow" type="CharacterBody2D" unique_id=1453424604 groups=["cow"]]
 script = ExtResource("1_cv0wc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1079924964]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_reef3")
 
-[node name="RandomMovement" type="Timer" parent="."]
+[node name="RandomMovement" type="Timer" parent="." unique_id=377037067]
 autostart = true
 
-[node name="Hitboxattachment" type="Area2D" parent="."]
-script = ExtResource("3_ifesx")
+[node name="Hitboxattachment" parent="." unique_id=1027149907 instance=ExtResource("3_ifesx")]
 
-[node name="Attackattachment" type="Node2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxattachment" unique_id=1239412981]
+shape = SubResource("CircleShape2D_tfoab")
 
-[node name="Healthattachment" type="Node2D" parent="."]
-script = ExtResource("3_ra332")
+[node name="Attackattachment" type="Node2D" parent="." unique_id=143163741]
+script = ExtResource("4_twmtf")
+
+[node name="Healthattachment" parent="." unique_id=4727040 instance=ExtResource("4_ydls3")]
+max_health = 100
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=165498850]
+shape = SubResource("CircleShape2D_ifesx")
+
+[node name="Label" type="Label" parent="." unique_id=1469638275]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "hi"
 
 [connection signal="timeout" from="RandomMovement" to="." method="_on_random_movement_timeout"]

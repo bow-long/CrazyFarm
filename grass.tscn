@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c7lrw1s7oxmw7"]
+
+[ext_resource type="Texture2D" uid="uid://dq4tfhqoq78j6" path="res://icon.svg" id="1_kl2qe"]
+[ext_resource type="Script" uid="uid://ceodsooni0aah" path="res://grass.gd" id="1_mw2ei"]
+
+[node name="Node2D" type="Node2D" unique_id=1489127738 groups=["grass"]]
+script = ExtResource("1_mw2ei")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1436631607]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(-4.7683716e-07, 0)
+scale = Vector2(0.16503906, 0.15820313)
+texture = ExtResource("1_kl2qe")

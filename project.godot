@@ -8,16 +8,28 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="CrazyFarm"
 run/main_scene="uid://brueu7qgsnc0s"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=360
+window/size/viewport_height=640
+window/size/mode=2
 window/ios/allow_high_refresh_rate=false
+
+[global_group]
+
+grass=""
+cow=""
 
 [rendering]
 
